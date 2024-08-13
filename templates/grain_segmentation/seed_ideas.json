@@ -1,0 +1,10 @@
+[
+    {
+      "Name": "WNet",
+      "Title": "WNet: Combining two UNets for grain boundary detection and boundary refinement",
+      "Experiment": "Modify the hyperparameters of the WNet and WNetPlusPlus models to maximize grain boundary detection/segmentation performance, or consider modifying the architecture altogether",
+      "Interestingness": 5,
+      "Feasibility": 8,
+      "Novelty": 4
+    }
+  ]

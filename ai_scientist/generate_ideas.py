@@ -3,7 +3,7 @@ import os
 import os.path as osp
 import time
 from typing import List, Dict, Union
-from ai_scientist.llm import get_response_from_llm, extract_json_between_markers
+from AI_Scientist.ai_scientist.llm import get_response_from_llm, extract_json_between_markers
 
 import requests
 import backoff

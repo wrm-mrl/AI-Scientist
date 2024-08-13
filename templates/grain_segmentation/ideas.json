@@ -1,0 +1,170 @@
+[
+    {
+        "Name": "WNet",
+        "Title": "WNet: Combining two UNets for grain boundary detection and boundary refinement",
+        "Experiment": "Modify the hyperparameters of the WNet and WNetPlusPlus models to maximize grain boundary detection/segmentation performance, or consider modifying the architecture altogether",
+        "Interestingness": 5,
+        "Feasibility": 8,
+        "Novelty": 4
+    },
+    {
+        "Name": "dynamic_graph_unet",
+        "Title": "Dynamic Graph Construction for Enhanced Grain Boundary Detection with UNet",
+        "Experiment": "Integrate a dynamic graph construction mechanism into the UNet-based models, updating graphs based on feature similarity at selected layers to reduce computational overhead. Use a simplified similarity measure, such as cosine similarity, to construct the graph dynamically. Modify the forward methods of existing models to include this graph update mechanism. Train and evaluate the model on the existing dataset, comparing performance to static graph models.",
+        "Interestingness": 8,
+        "Feasibility": 8,
+        "Novelty": 7
+    },
+    {
+        "Name": "multiscale_fpn_unet",
+        "Title": "Multi-Scale Feature Pyramid Network with UNet for Enhanced Grain Boundary Detection",
+        "Experiment": "Integrate a feature pyramid network (FPN) with the encoder of the UNet architecture to capture multi-scale features effectively. Modify the UNet model by adding lateral connections and a top-down pathway to create the feature pyramid. Train and evaluate this enhanced model on the available dataset, comparing its performance to the baseline UNet and WNet models.",
+        "Interestingness": 8,
+        "Feasibility": 7,
+        "Novelty": 7
+    },
+    {
+        "Name": "self_supervised_pretext_task",
+        "Title": "Self-Supervised Pretext Task for Enhanced Grain Boundary Detection",
+        "Experiment": "Develop a masked image modeling task as a pretext task for self-supervised learning. Modify the dataset and training loop to support self-supervised training using unlabeled images, followed by fine-tuning on the labeled dataset for boundary detection. Evaluate the model's performance with and without the self-supervised pretraining to assess the impact.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "contrastive_learning_unet",
+        "Title": "Contrastive Learning for Enhanced Grain Boundary Detection using UNet",
+        "Experiment": "Implement a contrastive learning framework by modifying the training loop to include positive and negative pairs. Use data augmentations to create positive pairs and different images to create negative pairs. Train the model to minimize contrastive loss during a pretraining phase, followed by fine-tuning on the grain boundary detection task. Evaluate the impact on detection performance compared to traditional supervised training.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "multi_modal_fusion",
+        "Title": "Multi-Modal Data Fusion for Enhanced Grain Boundary Detection",
+        "Experiment": "Design a multi-branch network where each branch processes one of the three channels (amplitude, Phi, phi1) separately using a series of convolutions. The branches are then fused together using a fusion strategy, such as concatenation followed by a series of fully connected layers or attention mechanisms, to aggregate the information. Modify the UNet or WNet architecture to incorporate this multi-modal fusion strategy and train the model on the existing dataset. Evaluate the performance improvements over the baseline models without multi-modal fusion.",
+        "Interestingness": 8,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "temporal_feature_aggregation",
+        "Title": "Temporal Feature Aggregation for Enhanced Grain Boundary Detection",
+        "Experiment": "Generate synthetic temporal sequences using realistic augmentations that mimic boundary changes. Implement a temporal feature aggregation layer in the existing models to combine features from these sequences without full RNN integration. Train the model with these aggregated features and evaluate the impact on detection accuracy compared to baseline models.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "transformer_unet",
+        "Title": "Integrating Transformers into UNet for Enhanced Grain Boundary Detection",
+        "Experiment": "Add a transformer block within the UNet architecture to enhance feature extraction. This involves creating a self-attention mechanism that can be plugged into the encoder or decoder of the UNet. Evaluate the model's performance compared to the baseline UNet to assess the impact of including transformer blocks.",
+        "Interestingness": 9,
+        "Feasibility": 6,
+        "Novelty": 9
+    },
+    {
+        "Name": "domain_adaptation_unet",
+        "Title": "Unsupervised Domain Adaptation for Robust Grain Boundary Detection",
+        "Experiment": "Integrate a pre-existing simple domain discriminator into the UNet or WNet architecture. Implement adversarial training to minimize the domain gap between source and target domains by encouraging the network to learn domain-invariant features. Modify the training loop to incorporate domain adaptation objectives. Use varied augmentations to simulate domain shifts within the existing dataset and evaluate the model's performance to assess the impact on generalization capabilities.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "feature_fusion_cross_attention",
+        "Title": "Feature Fusion via Cross-Attention for Enhanced Grain Boundary Detection",
+        "Experiment": "Design a cross-attention module to integrate feature maps from the three input channels (amplitude, Phi, phi1). Modify the UNet or a suitable architecture to include this module, allowing the network to learn attention weights that highlight the most informative regions from each channel. Train and evaluate the modified model on the existing dataset and compare performance with baseline models to assess improvements in boundary detection.",
+        "Interestingness": 9,
+        "Feasibility": 8,
+        "Novelty": 9
+    },
+    {
+        "Name": "unsupervised_clustering_enhancement",
+        "Title": "Unsupervised Clustering for Enhanced Feature Extraction in Grain Boundary Detection",
+        "Experiment": "Implement clustering algorithms such as K-Means or GMM to preprocess and generate feature vectors from the dataset. These vectors can then be used as additional input channels or fused with existing input channels in the UNet or WNet models. Evaluate the model's performance with and without clustering integration to assess the impact on detection accuracy.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "spatial_attention_graph_unet",
+        "Title": "Spatial Attention-Enhanced Graph UNet for Grain Boundary Detection",
+        "Experiment": "Extend the UNet architecture by incorporating a graph-based layer with spatial attention. Implement an efficient spatial attention mechanism to dynamically adjust node weights based on spatial context. Construct the initial graph using a simple distance-based measure, enhancing it with learned similarities during training. Train and evaluate the model on the dataset, comparing performance to baseline UNet and existing graph-based models.",
+        "Interestingness": 9,
+        "Feasibility": 8,
+        "Novelty": 9
+    },
+    {
+        "Name": "context_aware_boundary_refinement",
+        "Title": "Context-Aware Boundary Refinement for Enhanced Grain Boundary Detection",
+        "Experiment": "Introduce a context-aware attention module integrated within the UNet architecture to refine grain boundary predictions using local and global pixel context. This module can be implemented as an additional attention layer in the encoder or decoder of the UNet. Evaluate the refined model's performance on the existing dataset with a focus on edge precision, recall, model robustness, and generalization improvements. Compare results against the baseline model.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 9
+    },
+    {
+        "Name": "geometric_augmentation",
+        "Title": "Enhancing Grain Boundary Detection through Geometric Data Augmentation",
+        "Experiment": "Implement geometric transformations such as random rotation, scaling, and translation in the data preprocessing pipeline. Modify the existing AugmentedDataset and AugmentedDatasetv2 classes to include these transformations as part of the augmentation process. Train the model using the augmented dataset and evaluate its performance compared to the baseline model without geometric augmentation, focusing on improvements in accuracy and robustness.",
+        "Interestingness": 8,
+        "Feasibility": 8,
+        "Novelty": 7
+    },
+    {
+        "Name": "explainable_unet",
+        "Title": "Explainable UNet: Integrating Grad-CAM for Transparent Grain Boundary Detection",
+        "Experiment": "Implement Grad-CAM for the existing UNet or WNet models to visualize the regions of the input images that influence model predictions. Modify forward methods to include hooks for capturing gradients and activations in the final layers. Generate and analyze heatmaps during evaluation to understand model focus and decision-making. Compare the explainability and interpretability of predictions with and without Grad-CAM integration.",
+        "Interestingness": 9,
+        "Feasibility": 8,
+        "Novelty": 9
+    },
+    {
+        "Name": "spatial_transformer_unet",
+        "Title": "Spatial Transformer-Enhanced UNet for Improved Grain Boundary Detection",
+        "Experiment": "Integrate a spatial transformer network (STN) module at the input stage of the UNet architecture. The STN will learn affine transformations to align and enhance input features before passing them to the encoder. Modify the UNet class to include an STN layer, adjust the forward method to incorporate the spatially transformed inputs, and retrain the model. Evaluate the model's performance on the dataset and compare it to results from the baseline UNet and other enhanced models, focusing on boundary detection accuracy and robustness.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "simplified_nas_unet",
+        "Title": "Simplified Neural Architecture Search for Grain Boundary Detection",
+        "Experiment": "Implement a simplified neural architecture search by exploring a predefined set of architectural variations of UNet, WNet, and their variants. Use a straightforward search strategy, such as grid search or random search, to systematically explore this space. The search space should include reasonable variations in layers, skip connections, and attention mechanisms. Evaluate the performance of discovered architectures on the grain boundary detection task and compare them to existing models regarding accuracy and efficiency.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "multilevel_gnn_unet",
+        "Title": "Multi-Level GNN Integration in UNet for Enhanced Grain Boundary Detection",
+        "Experiment": "Integrate graph neural network (GNN) layers at strategic points within the UNet architecture, such as after key encoder and decoder blocks. Modify the UNet class to include these GNN layers, and adjust the forward pass method to incorporate GNN processing. Use a lightweight GNN variant, such as GraphSAGE, to maintain computational feasibility. Train and evaluate the modified model on the existing dataset, comparing its performance to baseline models to assess improvements in boundary detection.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "ensemble_learning",
+        "Title": "Ensemble Learning for Robust Grain Boundary Detection",
+        "Experiment": "Train multiple models (e.g., UNet, WNet, GraphUNet) independently on the dataset. Implement an ensemble mechanism, such as averaging predictions or a stacking ensemble, to combine outputs from these models. Evaluate the ensemble's performance against individual models to assess improvements in detection accuracy and robustness.",
+        "Interestingness": 9,
+        "Feasibility": 7,
+        "Novelty": 8
+    },
+    {
+        "Name": "meta_learning_unet",
+        "Title": "Meta-Learning for Fast Adaptation in Grain Boundary Detection",
+        "Experiment": "Implement a Model-Agnostic Meta-Learning (MAML) framework for the UNet or WNet architectures. Modify the training loop to include a meta-training phase with small tasks, each consisting of small subsets of the dataset. Use these tasks to train the model to initialize in a way that enables fast adaptation to new tasks. Evaluate the model's adaptability by fine-tuning it with only a few examples from a new set of images and measuring performance improvements over the baseline model.",
+        "Interestingness": 9,
+        "Feasibility": 6,
+        "Novelty": 9
+    },
+    {
+        "Name": "intra_image_geometric",
+        "Title": "Intra-Image Geometric Learning for Enhanced Grain Boundary Detection",
+        "Experiment": "Enhance existing graph-based methods by integrating geometric deep learning principles at the intra-image level. Modify the graph construction method to include geometric features such as angles and distances between boundaries. Incorporate these features into the existing UNet or WNet architectures, focusing on a single sample at a time. Train and evaluate on the existing dataset, comparing performance improvements in boundary detection accuracy.",
+        "Interestingness": 8,
+        "Feasibility": 7,
+        "Novelty": 8
+    }
+]
